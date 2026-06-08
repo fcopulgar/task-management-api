@@ -10,21 +10,21 @@ Campos esperados: `id`, `name`, `email`, `password_hash`, `role`, `must_change_p
 
 Reglas:
 
-- `email` debe ser unico.
+- `email` debe ser único.
 - `role` debe ser `ADMIN`, `EXECUTOR` o `AUDITOR`.
 - `password_hash` nunca debe exponerse por API.
-- `must_change_password` indica si el usuario debe cambiar contrasena.
+- `must_change_password` indica si el usuario debe cambiar contraseña.
 - `active = false` representa usuario desactivado.
 
-## Sesion
+## Sesión
 
 Campos esperados: `id`, `user_id`, `revoked_at`, `expires_at`, `created_at`.
 
 Reglas:
 
 - El JWT debe incluir `session_id`.
-- Una sesion revocada no debe permitir consumir endpoints protegidos.
-- Logout debe marcar la sesion como revocada.
+- Una sesión revocada no debe permitir consumir endpoints protegidos.
+- Logout debe marcar la sesión como revocada.
 
 ## Tarea
 

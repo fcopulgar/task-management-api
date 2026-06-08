@@ -11,6 +11,6 @@ Esta carpeta contiene el alcance del producto, requisitos funcionales, requisito
 - `product-scope.md`: alcance de producto y actores.
 - `functional-requirements.md`: requisitos funcionales planificados.
 - `non-functional-requirements.md`: requisitos no funcionales planificados.
-- `open-questions.md`: dudas reales pendientes de definicion.
+- `open-questions.md`: dudas reales pendientes de definición.
 
-Los requisitos describen comportamiento esperado. La implementacion esta `PENDIENTE DE IMPLEMENTACION`.
+Los requisitos describen comportamiento esperado. La implementación esta `PENDIENTE DE IMPLEMENTACION`.

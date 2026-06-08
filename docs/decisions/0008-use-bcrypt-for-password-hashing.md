@@ -1,15 +1,15 @@
-# 0008 — Usar bcrypt para hash de contrasenas
+# 0008 — Usar bcrypt para hash de contraseñas
 
 **Estado:** Aceptado  
 **Fecha:** 2026-06-07
 
 ## Contexto
 
-Las contrasenas deben almacenarse de forma segura y nunca en texto plano.
+Las contraseñas deben almacenarse de forma segura y nunca en texto plano.
 
-## Decision
+## Decisión
 
-Usar bcrypt para hashear y verificar contrasenas.
+Usar bcrypt para hashear y verificar contraseñas.
 
 ## Consecuencias
 
@@ -17,8 +17,8 @@ bcrypt es una opcion probada para password hashing. Requiere gestionar costo ade
 
 ## Alternativas consideradas
 
-Hash rapido general y Argon2. Hash rapido se descarta por inseguro para contrasenas; Argon2 queda como alternativa futura si se justifica.
+Hash rápido general y Argon2. Hash rápido se descarta por inseguro para contraseñas; Argon2 queda como alternativa futura si se justifica.
 
-## Relacion con otros ADRs
+## Relación con otros ADRs
 
-Se relaciona con autenticacion, cambio de contrasena y gestion de usuarios.
+Se relaciona con autenticación, cambio de contraseña y gestión de usuarios.

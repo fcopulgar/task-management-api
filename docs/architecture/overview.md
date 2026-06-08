@@ -4,14 +4,14 @@
 
 `PLANIFICADO`
 
-La arquitectura objetivo es hexagonal minimalista para mantener dominio y aplicacion desacoplados de frameworks, HTTP y persistencia.
+La arquitectura objetivo es hexagonal minimalista para mantener dominio y aplicación desacoplados de frameworks, HTTP y persistencia.
 
 ## Capas objetivo
 
 - Dominio: entidades, reglas, roles, estados, transiciones y errores de negocio.
-- Aplicacion: casos de uso, puertos internos y coordinacion de reglas.
+- Aplicación: casos de uso, puertos internos y coordinacion de reglas.
 - Adapters inbound: handlers HTTP con `chi`.
-- Adapters outbound: persistencia PostgreSQL con GORM, hashing bcrypt y emision/validacion JWT.
+- Adapters outbound: persistencia PostgreSQL con GORM, hashing bcrypt y emisión/validación JWT.
 
 ## DISEÑO OBJETIVO — Arquitectura hexagonal
 
@@ -29,7 +29,7 @@ flowchart LR
 
 - PostgreSQL como base de datos.
 - GORM como ORM.
-- `AutoMigrate` para inicializacion de esquema.
+- `AutoMigrate` para inicialización de esquema.
 - Modelos GORM separados de modelos de dominio.
 - GORM solo en adapters outbound.
 
@@ -37,5 +37,5 @@ flowchart LR
 
 - JWT con `session_id`.
 - Sesiones persistidas y revocables.
-- Logout mediante revocacion de sesion.
-- bcrypt para hash de contrasenas.
+- Logout mediante revocación de sesión.
+- bcrypt para hash de contraseñas.

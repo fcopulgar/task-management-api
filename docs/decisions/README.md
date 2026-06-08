@@ -1,4 +1,4 @@
-# Decisiones arquitectonicas
+# Decisiones arquitectónicas
 
 ## Estado
 
@@ -6,7 +6,7 @@
 
 ## Que es un ADR
 
-Un ADR registra una decision arquitectonica relevante, su contexto, consecuencias y alternativas consideradas.
+Un ADR registra una decisión arquitectónica relevante, su contexto, consecuencias y alternativas consideradas.
 
 ## ADRs vigentes
 
@@ -17,7 +17,7 @@ Un ADR registra una decision arquitectonica relevante, su contexto, consecuencia
 - `0005-use-gorm.md`: usar GORM.
 - `0006-use-gorm-automigrate.md`: usar GORM `AutoMigrate`.
 - `0007-use-jwt-with-revocable-sessions.md`: usar JWT con sesiones revocables.
-- `0008-use-bcrypt-for-password-hashing.md`: usar bcrypt para hash de contrasenas.
+- `0008-use-bcrypt-for-password-hashing.md`: usar bcrypt para hash de contraseñas.
 
 ## Numeracion
 
@@ -30,4 +30,4 @@ Usar numeracion secuencial de cuatro digitos:
 
 ## Cambio de decisiones
 
-Los ADRs son historial tecnico. No se borran cuando una decision cambia. Si una decision deja de estar vigente, se crea un nuevo ADR y el anterior se marca como `Reemplazado` o `Deprecado`.
+Los ADRs son historial técnico. No se borran cuando una decisión cambia. Si una decisión deja de estar vigente, se crea un nuevo ADR y el anterior se marca como `Reemplazado` o `Deprecado`.

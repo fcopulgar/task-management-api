@@ -29,11 +29,11 @@ Autentica un usuario activo y retorna un JWT con `session_id`.
 ```
 
 **Errores:**
-- `401` — credenciales invalidas (usuario no encontrado, inactivo o contrasena incorrecta)
+- `401` — credenciales invalidas (usuario no encontrado, inactivo o contraseña incorrecta)
 
 ### POST /auth/logout
 
-Cierra la sesion actual revocandola en base de datos.
+Cierra la sesión actual revocandola en base de datos.
 
 **Requiere:** `Authorization: Bearer <token>`
 
@@ -44,7 +44,7 @@ Cierra la sesion actual revocandola en base de datos.
 
 ### POST /auth/password
 
-Cambia la contrasena del usuario autenticado.
+Cambia la contraseña del usuario autenticado.
 
 **Requiere:** `Authorization: Bearer <token>`
 
@@ -56,7 +56,7 @@ Cambia la contrasena del usuario autenticado.
 **Response:** `204 No Content`
 
 **Errores:**
-- `401` — contrasena actual incorrecta
+- `401` — contraseña actual incorrecta
 - `404` — usuario no encontrado
 
 ## Usuarios — ADMIN
@@ -69,7 +69,7 @@ PUT    /users/{id}
 DELETE /users/{id}
 ```
 
-**Requiere:** `Authorization: Bearer <token>` + rol `ADMIN` + contrasena no temporal.
+**Requiere:** `Authorization: Bearer <token>` + rol `ADMIN` + contraseña no temporal.
 
 ### POST /users
 
@@ -140,7 +140,7 @@ PUT    /tasks/{id}     (ADMIN, solo ASSIGNED)
 DELETE /tasks/{id}     (ADMIN, solo ASSIGNED)
 ```
 
-**Requiere:** `Authorization: Bearer <token>` + rol correspondiente + contrasena no temporal.
+**Requiere:** `Authorization: Bearer <token>` + rol correspondiente + contraseña no temporal.
 
 ### POST /tasks
 
@@ -197,7 +197,7 @@ PATCH /me/tasks/{id}/status
 POST  /me/tasks/{id}/comments
 ```
 
-**Requiere:** `Authorization: Bearer <token>` + rol `EXECUTOR` + contrasena no temporal.
+**Requiere:** `Authorization: Bearer <token>` + rol `EXECUTOR` + contraseña no temporal.
 
 ### GET /me/tasks
 
@@ -225,7 +225,7 @@ Cambia el estado de una tarea propia segun el flujo permitido.
 
 **Errores:**
 - `403` — la tarea no pertenece al usuario
-- `409` — tarea vencida, transicion no permitida o estado terminal
+- `409` — tarea vencida, transición no permitida o estado terminal
 
 **Transiciones permitidas:**
 - `ASSIGNED -> STARTED`

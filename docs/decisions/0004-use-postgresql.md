@@ -7,18 +7,18 @@
 
 El sistema necesita persistencia relacional para usuarios, sesiones, tareas y comentarios.
 
-## Decision
+## Decisión
 
 Usar PostgreSQL como base de datos principal.
 
 ## Consecuencias
 
-Entrega integridad relacional y soporte robusto para evolucion futura. Requiere configuracion local y operativa adecuada.
+Entrega integridad relacional y soporte robusto para evolucion futura. Requiere configuración local y operativa adecuada.
 
 ## Alternativas consideradas
 
 SQLite y MySQL. Se descartan para mantener una base relacional robusta desde el inicio.
 
-## Relacion con otros ADRs
+## Relación con otros ADRs
 
 Base para ADR 0005 sobre GORM y ADR 0006 sobre AutoMigrate.

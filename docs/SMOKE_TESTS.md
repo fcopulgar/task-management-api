@@ -6,7 +6,7 @@
 
 ## Prerrequisitos
 
-- `docker compose up -d` con PostgreSQL y la aplicacion corriendo.
+- `docker compose up -d` con PostgreSQL y la aplicación corriendo.
 - Un usuario `ADMIN` insertado manualmente (via `psql`) con `must_change_password = false`.
 - `JWT_SECRET` configurado.
 
@@ -48,7 +48,7 @@ curl -s -X POST http://localhost:8080/auth/login \
 2. Intentar login con ese usuario.
 3. Debe retornar `401` "credenciales invalidas".
 
-## Smoke test 05 — Logout revoca sesion
+## Smoke test 05 — Logout revoca sesión
 
 ```bash
 TOKEN=$(login)
@@ -61,18 +61,18 @@ curl -s http://localhost:8080/users \
 # {"error":"sesion revocada"}  (401)
 ```
 
-## Smoke test 06 — Token con sesion revocada es rechazado
+## Smoke test 06 — Token con sesión revocada es rechazado
 
 Ver smoke test 05. La segunda llamada con el mismo token despues del logout debe fallar.
 
-## Smoke test 07 — Contrasena temporal bloquea acceso
+## Smoke test 07 — Contraseña temporal bloquea acceso
 
 1. Crear un usuario con `POST /users` (nace con `must_change_password = true`).
 2. Login con ese usuario.
 3. Intentar acceder a `GET /tasks` o `GET /users`.
-4. Debe retornar `403` "debe cambiar su contrasena antes de continuar".
-5. `POST /auth/password` debe funcionar (cambio de contrasena).
-6. `POST /auth/logout` debe funcionar (cierre de sesion).
+4. Debe retornar `403` "debe cambiar su contraseña antes de continuar".
+5. `POST /auth/password` debe funcionar (cambio de contraseña).
+6. `POST /auth/logout` debe funcionar (cierre de sesión).
 7. Despues del cambio, las rutas protegidas deben ser accesibles.
 
 ## Smoke test 08 — ADMIN no puede crear otro ADMIN
@@ -97,7 +97,7 @@ curl -s -X POST http://localhost:8080/users \
 # 201, MustChangePassword: true, Active: true
 ```
 
-## Smoke test 10 — Desactivacion logica
+## Smoke test 10 — Desactivación lógica
 
 ```bash
 TOKEN=$(admin_login)
@@ -111,7 +111,7 @@ curl -s http://localhost:8080/users/$USER_ID \
 # Active: false
 ```
 
-## Smoke test 11 — Creacion de tarea solo a EXECUTOR
+## Smoke test 11 — Creación de tarea solo a EXECUTOR
 
 ```bash
 TOKEN=$(admin_login)
@@ -189,7 +189,7 @@ curl -s -X PATCH http://localhost:8080/me/tasks/$TASK_ID/status \
 
 1. Tarea en ASSIGNED.
 2. `PATCH /me/tasks/{id}/status` con `{"new_status":"FINISHED_SUCCESS"}`.
-3. Debe retornar `409` "transicion de estado no permitida".
+3. Debe retornar `409` "transición de estado no permitida".
 
 ## Resultado de smoke tests
 

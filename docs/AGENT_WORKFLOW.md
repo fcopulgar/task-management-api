@@ -35,6 +35,6 @@ Todo cierre debe reportar:
 
 - archivos modificados
 - tareas del plan completadas
-- validacion realizada
-- documentacion actualizada
+- validación realizada
+- documentación actualizada
 - deuda o pendientes detectados

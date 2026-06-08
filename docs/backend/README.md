@@ -4,7 +4,7 @@
 
 `PLANIFICADO`
 
-Esta carpeta documenta contratos backend esperados para `task-management-api`. No contiene implementacion.
+Esta carpeta documenta contratos backend esperados para `task-management-api`. No contiene implementación.
 
 ## Documentos
 

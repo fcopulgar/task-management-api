@@ -4,19 +4,19 @@
 
 `PLANIFICADO`
 
-Los requisitos estan especificados para implementacion futura. Ningun endpoint esta implementado todavia.
+Los requisitos estan especificados para implementación futura. Ningun endpoint esta implementado todavía.
 
 ### RF-001 — Login de usuario
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** El sistema debe autenticar usuarios activos mediante credenciales validas y entregar un token.
+**Descripción:** El sistema debe autenticar usuarios activos mediante credenciales validas y entregar un token.
 
 **Reglas:**
 
-- El token debe identificar usuario, perfil y sesion.
+- El token debe identificar usuario, perfil y sesión.
 - El token debe incluir `session_id`.
-- Un usuario inactivo no puede iniciar sesion.
+- Un usuario inactivo no puede iniciar sesión.
 
 **Criterios de aceptacion:**
 
@@ -28,91 +28,91 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** El sistema debe cerrar la sesion actual del usuario autenticado.
+**Descripción:** El sistema debe cerrar la sesión actual del usuario autenticado.
 
 **Reglas:**
 
-- Logout debe revocar la sesion persistida.
-- Un token con sesion revocada no debe ser aceptado.
+- Logout debe revocar la sesión persistida.
+- Un token con sesión revocada no debe ser aceptado.
 
 **Criterios de aceptacion:**
 
-- Logout marca la sesion como revocada.
+- Logout marca la sesión como revocada.
 - El token previo queda inutilizable para endpoints protegidos.
 
-### RF-003 — Cambio de contrasena
+### RF-003 — Cambio de contraseña
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** Cualquier perfil autenticado debe poder cambiar su contrasena.
+**Descripción:** Cualquier perfil autenticado debe poder cambiar su contraseña.
 
 **Reglas:**
 
-- La nueva contrasena debe almacenarse hasheada con bcrypt.
+- La nueva contraseña debe almacenarse hasheada con bcrypt.
 - No se debe exponer `password_hash` por API.
 
 **Criterios de aceptacion:**
 
-- La contrasena cambia correctamente.
+- La contraseña cambia correctamente.
 - El hash no aparece en respuestas HTTP.
 
-### RF-004 — Restriccion por contrasena temporal
+### RF-004 — Restricción por contraseña temporal
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** Usuarios creados con contrasena temporal deben cambiarla en el primer ingreso.
+**Descripción:** Usuarios creados con contraseña temporal deben cambiarla en el primer ingreso.
 
 **Reglas:**
 
-- Un usuario con `must_change_password = true` solo puede cambiar contrasena y cerrar sesion.
-- Al cambiar la contrasena, la marca debe quedar resuelta.
+- Un usuario con `must_change_password = true` solo puede cambiar contraseña y cerrar sesión.
+- Al cambiar la contraseña, la marca debe quedar resuelta.
 
 **Criterios de aceptacion:**
 
 - El acceso a otras funcionalidades queda bloqueado mientras la marca esta activa.
 - Cambio exitoso habilita el flujo normal segun perfil.
 
-### RF-005 — Gestion de usuarios por administrador
+### RF-005 — Gestión de usuarios por administrador
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `ADMIN` debe poder crear, listar, ver detalle, actualizar y desactivar usuarios.
+**Descripción:** `ADMIN` debe poder crear, listar, ver detalle, actualizar y desactivar usuarios.
 
 **Reglas:**
 
 - Solo `ADMIN` puede gestionar usuarios.
-- La eliminacion debe preferir desactivacion logica.
+- La eliminación debe preferir desactivación lógica.
 
 **Criterios de aceptacion:**
 
-- Perfiles no administradores no acceden a gestion de usuarios.
-- La desactivacion deja `active = false`.
+- Perfiles no administradores no acceden a gestión de usuarios.
+- La desactivación deja `active = false`.
 
-### RF-006 — Restriccion de creacion de administradores
+### RF-006 — Restricción de creación de administradores
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** Un `ADMIN` no debe poder crear otros usuarios `ADMIN`.
+**Descripción:** Un `ADMIN` no debe poder crear otros usuarios `ADMIN`.
 
 **Reglas:**
 
 - `POST /users` solo permite crear `EXECUTOR` o `AUDITOR`.
-- Los usuarios creados por `ADMIN` nacen con contrasena temporal.
+- Los usuarios creados por `ADMIN` nacen con contraseña temporal.
 
 **Criterios de aceptacion:**
 
 - Intentar crear `ADMIN` es rechazado.
 - Usuarios creados quedan con `must_change_password = true`.
 
-### RF-007 — Gestion de tareas por administrador
+### RF-007 — Gestión de tareas por administrador
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `ADMIN` debe poder crear, listar, ver detalle, actualizar y eliminar tareas segun reglas.
+**Descripción:** `ADMIN` debe poder crear, listar, ver detalle, actualizar y eliminar tareas segun reglas.
 
 **Reglas:**
 
-- Una tarea debe tener titulo, descripcion y fecha de vencimiento.
+- Una tarea debe tener título, descripción y fecha de vencimiento.
 - Una tarea nueva nace en `ASSIGNED`.
 
 **Criterios de aceptacion:**
@@ -120,11 +120,11 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 - `ADMIN` crea tareas validas.
 - Tareas nuevas quedan en `ASSIGNED`.
 
-### RF-008 — Asignacion de tareas solo a ejecutores
+### RF-008 — Asignación de tareas solo a ejecutores
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** Las tareas solo pueden asignarse a usuarios `EXECUTOR`.
+**Descripción:** Las tareas solo pueden asignarse a usuarios `EXECUTOR`.
 
 **Reglas:**
 
@@ -136,11 +136,11 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 - Asignaciones a `EXECUTOR` son aceptadas.
 - Asignaciones a otros perfiles son rechazadas.
 
-### RF-009 — Restriccion de actualizacion/eliminacion por estado
+### RF-009 — Restricción de actualización/eliminación por estado
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `ADMIN` solo puede actualizar o eliminar tareas en estado `ASSIGNED`.
+**Descripción:** `ADMIN` solo puede actualizar o eliminar tareas en estado `ASSIGNED`.
 
 **Reglas:**
 
@@ -156,7 +156,7 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `EXECUTOR` debe poder listar solo sus tareas asignadas.
+**Descripción:** `EXECUTOR` debe poder listar solo sus tareas asignadas.
 
 **Reglas:**
 
@@ -170,7 +170,7 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `EXECUTOR` debe poder ver detalle solo de tareas propias.
+**Descripción:** `EXECUTOR` debe poder ver detalle solo de tareas propias.
 
 **Reglas:**
 
@@ -179,13 +179,13 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 **Criterios de aceptacion:**
 
 - Tarea propia retorna detalle.
-- Tarea ajena no retorna informacion sensible.
+- Tarea ajena no retorna información sensible.
 
-### RF-012 — Actualizacion de estado por ejecutor
+### RF-012 — Actualización de estado por ejecutor
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `EXECUTOR` debe poder modificar el estado de tareas propias segun flujo permitido.
+**Descripción:** `EXECUTOR` debe poder modificar el estado de tareas propias segun flujo permitido.
 
 **Reglas:**
 
@@ -197,11 +197,11 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 - Transiciones validas son aceptadas.
 - Transiciones invalidas son rechazadas.
 
-### RF-013 — Bloqueo de actualizacion de tarea vencida
+### RF-013 — Bloqueo de actualización de tarea vencida
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `EXECUTOR` no puede cambiar estado de una tarea vencida.
+**Descripción:** `EXECUTOR` no puede cambiar estado de una tarea vencida.
 
 **Reglas:**
 
@@ -215,7 +215,7 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `EXECUTOR` debe poder comentar tareas vencidas propias.
+**Descripción:** `EXECUTOR` debe poder comentar tareas vencidas propias.
 
 **Reglas:**
 
@@ -227,11 +227,11 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 - Comentario valido queda persistido.
 - Comentario sobre tarea ajena o no vencida es rechazado.
 
-### RF-015 — Visualizacion de tareas por auditor
+### RF-015 — Visualización de tareas por auditor
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** `AUDITOR` debe poder listar y ver tareas de cualquier usuario.
+**Descripción:** `AUDITOR` debe poder listar y ver tareas de cualquier usuario.
 
 **Reglas:**
 
@@ -246,7 +246,7 @@ Los requisitos estan especificados para implementacion futura. Ningun endpoint e
 
 **Estado:** PLANIFICADO
 
-**Descripcion:** El sistema debe controlar el flujo de estados de tareas.
+**Descripción:** El sistema debe controlar el flujo de estados de tareas.
 
 **Reglas:**
 

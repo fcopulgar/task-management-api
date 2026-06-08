@@ -4,7 +4,7 @@
 
 `PLANIFICADO`
 
-La arquitectura objetivo de `task-management-api` es hexagonal minimalista. Esta carpeta describe el diseno esperado; la implementacion esta `PENDIENTE DE IMPLEMENTACION`.
+La arquitectura objetivo de `task-management-api` es hexagonal minimalista. Esta carpeta describe el diseno esperado; la implementación esta `PENDIENTE DE IMPLEMENTACION`.
 
 ## Documentos
 

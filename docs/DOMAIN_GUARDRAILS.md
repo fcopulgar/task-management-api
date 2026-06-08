@@ -1,6 +1,6 @@
 # Guardrails de dominio
 
-## Proposito
+## Propósito
 
 Este documento contiene reglas que futuros agentes no deben romper.
 
@@ -13,20 +13,20 @@ Este documento contiene reglas que futuros agentes no deben romper.
 - Solo `ADMIN` puede crear usuarios.
 - `ADMIN` solo puede crear usuarios `EXECUTOR` o `AUDITOR`.
 - `ADMIN` no puede crear otros `ADMIN`.
-- Todo usuario creado por `ADMIN` nace con contrasena temporal o con `must_change_password = true`.
-- Un usuario inactivo no puede iniciar sesion.
+- Todo usuario creado por `ADMIN` nace con contraseña temporal o con `must_change_password = true`.
+- Un usuario inactivo no puede iniciar sesión.
 - Nunca retornar `password_hash` por API.
-- `email` debe ser unico.
-- La desactivacion logica se prefiere sobre eliminacion fisica.
+- `email` debe ser único.
+- La desactivación lógica se prefiere sobre eliminación fisica.
 
-## Autenticacion
+## Autenticación
 
-- Login valido debe crear o asociar una sesion.
+- Login valido debe crear o asociar una sesión.
 - JWT debe incluir `session_id`.
-- Logout debe revocar la sesion.
-- Un token con sesion revocada no debe ser aceptado.
-- Usuarios con `must_change_password = true` solo pueden cambiar contrasena y cerrar sesion.
-- Las contrasenas deben almacenarse con bcrypt.
+- Logout debe revocar la sesión.
+- Un token con sesión revocada no debe ser aceptado.
+- Usuarios con `must_change_password = true` solo pueden cambiar contraseña y cerrar sesión.
+- Las contraseñas deben almacenarse con bcrypt.
 
 ## Tareas
 

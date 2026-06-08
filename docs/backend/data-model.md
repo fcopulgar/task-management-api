@@ -22,7 +22,7 @@ El modelo de datos esta definido a nivel documental. Los modelos GORM estan `PEN
 
 Restricciones esperadas:
 
-- `email` unico.
+- `email` único.
 - `role` limitado a `ADMIN`, `EXECUTOR`, `AUDITOR`.
 
 ### sessions
@@ -36,7 +36,7 @@ Restricciones esperadas:
 Restricciones esperadas:
 
 - `user_id` referencia a usuario.
-- `revoked_at` nulo representa sesion no revocada.
+- `revoked_at` nulo representa sesión no revocada.
 
 ### tasks
 
@@ -69,7 +69,7 @@ Restricciones esperadas:
 - `task_id` referencia a tarea.
 - `user_id` referencia a usuario comentarista.
 
-## Inicializacion
+## Inicialización
 
 - Usar GORM `AutoMigrate`.
 - No usar migraciones SQL versionadas en esta etapa.

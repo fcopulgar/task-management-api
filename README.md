@@ -1,29 +1,29 @@
 # task-management-api
 
-## Realizacion
+## Realización
 
 Para detalles de la implementación y el uso de IA leer el flujo documentado en [metadata/README.md](metadata/README.md).
 
-## Descripcion
+## Descripción
 
-`task-management-api` es una API REST para gestion de usuarios y tareas con autenticacion, autorizacion por perfiles, cambio obligatorio de contrasena temporal, cierre de sesion y control de estados de tareas.
+`task-management-api` es una API REST para gestión de usuarios y tareas con autenticación, autorización por perfiles, cambio obligatorio de contraseña temporal, cierre de sesión y control de estados de tareas.
 
-El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo es mantener una base backend clara, segura, testeable y extensible, evitando sobredimensionar la solucion.
+El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo es mantener una base backend clara, segura, testeable y extensible, evitando sobredimensionar la solución.
 
-## Documentacion
+## Documentación
 
-- `PLAN.md`: plan de implementacion por fases.
+- `PLAN.md`: plan de implementación por fases.
 - `AGENTS.md`: reglas obligatorias para agentes.
 - `docs/CURRENT_STATE.md`: estado real y vigente del proyecto.
-- `docs/backend/api.md`: documentacion completa de la API.
+- `docs/backend/api.md`: documentación completa de la API.
 - `docs/requirements/`: alcance y requisitos funcionales/no funcionales.
 - `docs/architecture/`: arquitectura objetivo.
 - `docs/decisions/`: ADRs versionados (0001-0008).
 - `docs/DOMAIN_GUARDRAILS.md`: reglas de negocio que no deben romperse.
 - `docs/SMOKE_TESTS.md`: smoke tests documentados.
-- `docs/PRODUCTION_CHECKLIST.md`: checklist para produccion.
-- `docs/TECH_DEBT.md`: deuda tecnica registrada.
-- `docs/standards/`: estandares de documentacion y validacion.
+- `docs/PRODUCTION_CHECKLIST.md`: checklist para producción.
+- `docs/TECH_DEBT.md`: deuda técnica registrada.
+- `docs/standards/`: estándares de documentación y validación.
 
 ## Stack
 
@@ -31,10 +31,10 @@ El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo
 - **Router HTTP:** `chi`
 - **ORM:** GORM
 - **Base de datos:** PostgreSQL 17
-- **Inicializacion de esquema:** GORM `AutoMigrate`
-- **Autenticacion:** JWT (HS256) con `session_id` en claims
+- **Inicialización de esquema:** GORM `AutoMigrate`
+- **Autenticación:** JWT (HS256) con `session_id` en claims
 - **Sesiones:** revocables, persistidas en base de datos
-- **Hash de contrasenas:** bcrypt
+- **Hash de contraseñas:** bcrypt
 - **Testing:** `testing`, `testify`, `httptest`
 
 ## Requisitos
@@ -43,7 +43,7 @@ El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo
 - **Docker + Docker Compose** (recomendado)
 - **PostgreSQL 17** (si se ejecuta sin Docker)
 
-## Instalacion y ejecucion
+## Instalación y ejecución
 
 ### Con Docker Compose (recomendado)
 
@@ -103,14 +103,14 @@ docker run --rm -v "$(pwd):/app" -w /app --network task-management-api_default -
 
 ## Endpoints
 
-Documentacion completa en `docs/backend/api.md`.
+Documentación completa en `docs/backend/api.md`.
 
-| Metodo | Ruta | Perfil | Descripcion |
+| Método | Ruta | Perfil | Descripción |
 |--------|------|--------|-------------|
-| `GET` | `/health` | Publico | Health check |
-| `POST` | `/auth/login` | Publico | Iniciar sesion |
-| `POST` | `/auth/logout` | Autenticado | Cerrar sesion |
-| `POST` | `/auth/password` | Autenticado | Cambiar contrasena |
+| `GET` | `/health` | Público | Health check |
+| `POST` | `/auth/login` | Público | Iniciar sesión |
+| `POST` | `/auth/logout` | Autenticado | Cerrar sesión |
+| `POST` | `/auth/password` | Autenticado | Cambiar contraseña |
 | `POST` | `/users` | ADMIN | Crear usuario |
 | `GET` | `/users` | ADMIN | Listar usuarios |
 | `GET` | `/users/{id}` | ADMIN | Ver usuario |
@@ -130,7 +130,7 @@ Documentacion completa en `docs/backend/api.md`.
 
 ### Seed inicial: crear un ADMIN directamente en la base de datos
 
-El sistema no incluye un endpoint publico para crear el primer `ADMIN`. Debe insertarse manualmente:
+El sistema no incluye un endpoint público para crear el primer `ADMIN`. Debe insertarse manualmente:
 
 ```bash
 # Con docker compose corriendo, generar hash bcrypt:
@@ -147,7 +147,7 @@ VALUES (gen_random_uuid(), 'Admin', 'admin@test.com', '<HASH>', 'ADMIN', false, 
 
 O alternativamente, usar una herramienta externa como `htpasswd -bnBC 10 "" admin123 | tr -d ':\n'` para generar el hash.
 
-### Autenticacion
+### Autenticación
 
 ```bash
 # Login como ADMIN
@@ -161,7 +161,7 @@ TOKEN="eyJhbGciOiJIUzI1NiIs..."
 AUTH="Authorization: Bearer $TOKEN"
 ```
 
-### Gestion de usuarios (ADMIN)
+### Gestión de usuarios (ADMIN)
 
 ```bash
 # Crear un EXECUTOR
@@ -190,7 +190,7 @@ curl -s -X POST http://localhost:8080/users \
 # {"error":"no se puede crear usuarios ADMIN"}  (403)
 ```
 
-### Gestion de tareas (ADMIN)
+### Gestión de tareas (ADMIN)
 
 ```bash
 # Crear una tarea asignada a un EXECUTOR
@@ -272,7 +272,7 @@ curl -s -X POST http://localhost:8080/me/tasks/{overdue-task-id}/comments \
   -d '{"comment":"Trabajando en resolver el atraso"}'
 ```
 
-### Logout y revocacion de sesion
+### Logout y revocación de sesión
 
 ```bash
 # Cerrar sesion

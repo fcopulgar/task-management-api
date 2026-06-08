@@ -5,20 +5,20 @@
 
 ## Contexto
 
-El sistema debe separar reglas de negocio de frameworks, HTTP y persistencia sin sobredimensionar la solucion.
+El sistema debe separar reglas de negocio de frameworks, HTTP y persistencia sin sobredimensionar la solución.
 
-## Decision
+## Decisión
 
-Usar arquitectura hexagonal minimalista con dominio, aplicacion, adapters inbound y adapters outbound.
+Usar arquitectura hexagonal minimalista con dominio, aplicación, adapters inbound y adapters outbound.
 
 ## Consecuencias
 
-El dominio y la aplicacion quedan testeables y desacoplados. Exige mantener limites de dependencias y evitar que handlers o repositorios concentren reglas.
+El dominio y la aplicación quedan testeables y desacoplados. Exige mantener limites de dependencias y evitar que handlers o repositorios concentren reglas.
 
 ## Alternativas consideradas
 
 Arquitectura por capas tradicional y arquitectura limpia completa. Se prefiere una variante hexagonal minimalista para reducir ceremonia.
 
-## Relacion con otros ADRs
+## Relación con otros ADRs
 
 Condiciona ADRs de GORM, chi y separacion dominio/infraestructura.

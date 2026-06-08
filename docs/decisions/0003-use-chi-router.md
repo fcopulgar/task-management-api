@@ -7,7 +7,7 @@
 
 La API REST necesita un router HTTP liviano, idiomatico y compatible con middleware.
 
-## Decision
+## Decisión
 
 Usar `chi` como router HTTP.
 
@@ -17,8 +17,8 @@ Permite rutas claras y middlewares composables. No debe contener reglas de negoc
 
 ## Alternativas consideradas
 
-Router estandar `net/http` puro y frameworks mas amplios. Se elige `chi` por equilibrio entre simplicidad y ergonomia.
+Router estándar `net/http` puro y frameworks mas amplios. Se elige `chi` por equilibrio entre simplicidad y ergonomia.
 
-## Relacion con otros ADRs
+## Relación con otros ADRs
 
 Se integra con la arquitectura hexagonal como adapter inbound HTTP.

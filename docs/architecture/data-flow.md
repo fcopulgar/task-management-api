@@ -36,7 +36,7 @@ sequenceDiagram
     U-->>C: sesion cerrada
 ```
 
-## DISEÑO OBJETIVO — Cambio obligatorio de contrasena
+## DISEÑO OBJETIVO — Cambio obligatorio de contraseña
 
 ```mermaid
 flowchart TD
