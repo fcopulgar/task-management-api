@@ -1,5 +1,9 @@
 # task-management-api
 
+## Realizacion
+
+Para detalles de la implementación y el uso de IA leer el flujo documentado en [metadata/README.md](metadata/README.md).
+
 ## Descripcion
 
 `task-management-api` es una API REST para gestion de usuarios y tareas con autenticacion, autorizacion por perfiles, cambio obligatorio de contrasena temporal, cierre de sesion y control de estados de tareas.
