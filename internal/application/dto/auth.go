@@ -1,8 +1,8 @@
 package dto
 
 type LoginInput struct {
-	Email    string
-	Password string
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
 type LoginOutput struct {
@@ -10,7 +10,7 @@ type LoginOutput struct {
 }
 
 type ChangePasswordInput struct {
-	UserID      string
-	OldPassword string
-	NewPassword string
+	UserID      string `json:"-"`
+	OldPassword string `json:"old_password"`
+	NewPassword string `json:"new_password"`
 }

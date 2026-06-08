@@ -7,24 +7,24 @@ import (
 )
 
 type CreateTaskInput struct {
-	Title       string
-	Description string
-	DueAt       time.Time
-	AssigneeID  string
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	DueAt       time.Time `json:"due_at"`
+	AssigneeID  string    `json:"assignee_id"`
 }
 
 type UpdateTaskInput struct {
-	ID          string
-	Title       string
-	Description string
-	DueAt       time.Time
-	AssigneeID  string
+	ID          string    `json:"-"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	DueAt       time.Time `json:"due_at"`
+	AssigneeID  string    `json:"assignee_id"`
 }
 
 type TransitionTaskInput struct {
-	TaskID    string
-	UserID    string
-	NewStatus domain.TaskStatus
+	TaskID    string           `json:"-"`
+	UserID    string           `json:"-"`
+	NewStatus domain.TaskStatus `json:"new_status"`
 }
 
 type TaskOutput struct {

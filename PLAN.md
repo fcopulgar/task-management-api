@@ -322,7 +322,7 @@ Implementar CRUD de usuarios para `ADMIN`, respetando restricciones de rol, cont
 
 ## Fase 7 — Gestion de tareas administrador y auditor
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -337,12 +337,12 @@ Implementar creacion, listado, detalle, actualizacion y eliminacion de tareas se
 
 ### Tareas
 
-- [ ] Implementar casos de uso de tareas para administrador.
-- [ ] Implementar lectura de tareas para auditor.
-- [ ] Implementar handlers HTTP compartidos segun permisos.
-- [ ] Validar asignacion a usuarios `EXECUTOR`.
-- [ ] Rechazar actualizacion o eliminacion fuera de `ASSIGNED`.
-- [ ] Agregar tests de permisos, asignacion y estados.
+- [x] Implementar casos de uso de tareas para administrador.
+- [x] Implementar lectura de tareas para auditor.
+- [x] Implementar handlers HTTP compartidos segun permisos.
+- [x] Validar asignacion a usuarios `EXECUTOR`.
+- [x] Rechazar actualizacion o eliminacion fuera de `ASSIGNED`.
+- [x] Agregar tests de permisos, asignacion y estados.
 
 ### Criterios de aceptacion
 

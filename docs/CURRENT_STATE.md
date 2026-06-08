@@ -64,12 +64,20 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - `password_hash` nunca expuesto en respuestas API.
 - Validacion de email unico al crear/actualizar.
 - Tests: 10 use case + 8 handler = 18 tests adicionales.
+- **Fase 7 — Gestion de tareas administrador y auditor**.
+- Caso de uso `TaskUseCase` con `CreateTask`, `ListTasks`, `GetTask`, `UpdateTask`, `DeleteTask`.
+- Validacion de asignacion solo a `EXECUTOR` (busca usuario en repositorio, valida rol).
+- Restriccion de actualizacion/eliminacion solo en estado `ASSIGNED` (`ErrTaskNotModifiable`).
+- Middleware `RequireAnyRole(roles ...domain.Role)` para rutas compartidas.
+- Rutas `/tasks` GET (ADMIN + AUDITOR), POST/PUT/DELETE (ADMIN solo).
+- Handlers HTTP con `handleTaskError` para errores de tarea.
+- `Dependencies` ampliado con `TaskRepo`.
+- Tests: 8 use case + 6 handler = 14 tests adicionales.
 
 ## Planificado
 
-- Casos de uso de tareas.
-- Handlers HTTP de tareas.
-- Endpoints de negocio (Fases 7-9).
+- Flujos de ejecutor (Fase 8).
+- Tests HTTP, hardening, documentacion final (Fase 9).
 
 ## No implementado todavia
 

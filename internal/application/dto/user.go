@@ -7,18 +7,18 @@ import (
 )
 
 type CreateUserInput struct {
-	Name     string
-	Email    string
-	Password string
-	Role     domain.Role
+	Name     string      `json:"name"`
+	Email    string      `json:"email"`
+	Password string      `json:"password"`
+	Role     domain.Role `json:"role"`
 }
 
 type UpdateUserInput struct {
-	ID     string
-	Name   string
-	Email  string
-	Role   domain.Role
-	Active *bool
+	ID     string      `json:"-"`
+	Name   string      `json:"name"`
+	Email  string      `json:"email"`
+	Role   domain.Role `json:"role"`
+	Active *bool       `json:"active"`
 }
 
 type UserOutput struct {

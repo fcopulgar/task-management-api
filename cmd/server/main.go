@@ -54,12 +54,14 @@ func main() {
 
 	userRepo := persistence.NewGormUserRepository(db)
 	sessionRepo := persistence.NewGormSessionRepository(db)
+	taskRepo := persistence.NewGormTaskRepository(db)
 	hasher := security.NewBcryptHasher()
 	tokenSvc := security.NewJWTTokenService(cfg.JWTSecret)
 
 	deps := application.Dependencies{
 		UserRepo:    userRepo,
 		SessionRepo: sessionRepo,
+		TaskRepo:    taskRepo,
 		Hasher:      hasher,
 		TokenSvc:    tokenSvc,
 	}
@@ -78,6 +80,7 @@ func main() {
 
 	httphandler.SetupAuthRoutes(r, deps)
 	httphandler.SetupUserRoutes(r, deps)
+	httphandler.SetupTaskRoutes(r, deps)
 
 	srv := &http.Server{
 		Addr:         fmt.Sprintf(":%s", cfg.ServerPort),

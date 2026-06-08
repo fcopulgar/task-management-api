@@ -52,3 +52,22 @@ func SetupProtectedRoutes(r chi.Router, deps application.Dependencies) {
 		// endpoints protegidos se registraran en fases futuras
 	})
 }
+
+func SetupTaskRoutes(r chi.Router, deps application.Dependencies) {
+	taskUC := application.NewTaskUseCase(deps)
+	taskHandler := NewTaskHandler(taskUC)
+
+	authMW := NewAuthMiddleware(deps.UserRepo, deps.SessionRepo, deps.TokenSvc)
+
+	r.Route("/tasks", func(r chi.Router) {
+		r.Use(authMW.Authenticate)
+		r.Use(authMW.RequirePasswordNotTemporary)
+
+		r.With(RequireAnyRole(domain.RoleAdmin, domain.RoleAuditor)).Get("/", taskHandler.List)
+		r.With(RequireAnyRole(domain.RoleAdmin, domain.RoleAuditor)).Get("/{id}", taskHandler.Get)
+
+		r.With(RequireRole(domain.RoleAdmin)).Post("/", taskHandler.Create)
+		r.With(RequireRole(domain.RoleAdmin)).Put("/{id}", taskHandler.Update)
+		r.With(RequireRole(domain.RoleAdmin)).Delete("/{id}", taskHandler.Delete)
+	})
+}
