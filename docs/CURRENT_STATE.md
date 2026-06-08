@@ -15,24 +15,30 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Documentacion backend planificada.
 - ADRs iniciales `0001` a `0008`.
 - `PLAN.md` con fases de implementacion.
+- **Fase 1 — Bootstrap tecnico del proyecto**.
+- Modulo Go inicializado (`go.mod`, `go.sum`).
+- Servidor HTTP minimo con `chi` (solo endpoint `/health`).
+- Configuracion de entorno (`internal/config/config.go`, `.env.example`).
+- `Makefile` con comandos `build`, `run`, `test`, `clean`, `docker-build`, `docker-up`, `docker-down`, `docker-logs`.
+- `Dockerfile` multi-stage (build + runtime alpine).
+- `docker-compose.yml` con PostgreSQL 17 y aplicacion.
+- `.gitignore`.
 
 ## Planificado
 
-- Backend en Go con router `chi`.
 - Persistencia en PostgreSQL con GORM y `AutoMigrate`.
 - Autenticacion JWT con `session_id`.
 - Sesiones revocables persistidas en base de datos.
 - Hash de contrasenas con bcrypt.
 - Tests con `testing`, `testify` y `httptest` cuando corresponda.
-- Desarrollo local futuro con Docker Compose y Makefile.
+- Dominio, aplicacion, handlers y repositorios (Fases 2-9).
 
 ## No implementado todavia
 
-- Codigo de aplicacion.
-- Endpoints reales.
 - Modelos de dominio o GORM.
-- Casos de uso, handlers, repositorios y servicios.
-- Docker Compose, Makefile y tests ejecutables.
+- Casos de uso, handlers, repositorios y servicios de negocio.
+- Endpoints de negocio.
+- Tests ejecutables de negocio.
 
 ## Endpoints planificados
 
@@ -72,14 +78,14 @@ Los endpoints estan documentados en `docs/backend/api.md` y se encuentran `PENDI
 ## Validacion disponible
 
 - Validacion documental de estructura y archivos Markdown.
-- Verificacion de ausencia de codigo de aplicacion.
+- Build: `go build ./cmd/server` (requiere Go 1.24+ o `docker compose build`).
+- Ejecucion local: `docker compose up` o `go run ./cmd/server` + PostgreSQL.
+- Health check: `GET /health` retorna `{"status":"ok"}`.
 
 ## Que no se pudo validar
 
-- Build.
-- Tests.
-- Ejecucion local.
-- Integraciones.
-- Endpoints.
+- Tests de negocio.
+- Integraciones de dominio y persistencia.
+- Endpoints de negocio.
 
-Estos puntos no se pudieron validar porque la implementacion esta `PENDIENTE DE IMPLEMENTACION`.
+Estos puntos no se pudieron validar porque las fases correspondientes estan `PENDIENTE DE IMPLEMENTACION`.

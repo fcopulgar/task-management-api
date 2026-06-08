@@ -8,9 +8,9 @@ El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo
 
 ## Estado actual
 
-- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales y plan de implementacion por fases.
-- `PLANIFICADO`: API REST en Go con `chi`, PostgreSQL, GORM, AutoMigrate, JWT con `session_id`, sesiones revocables, bcrypt y tests con `testing`, `testify` y `httptest` cuando corresponda.
-- `PENDIENTE DE IMPLEMENTACION`: codigo de aplicacion, endpoints, modelos, casos de uso, persistencia, autenticacion real, Docker Compose y Makefile.
+- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales, plan de implementacion por fases, bootstrap tecnico (Go, `chi`, servidor minimo, Docker Compose, Makefile).
+- `PLANIFICADO`: implementacion de dominio, aplicacion, persistencia GORM, autenticacion JWT con `session_id`, sesiones revocables, bcrypt, endpoints de negocio y tests.
+- `PENDIENTE DE IMPLEMENTACION`: codigo de dominio, casos de uso, endpoints, modelos GORM, repositorios, servicios de autenticacion, integraciones y tests de negocio.
 - `PENDIENTE DE DEFINICION`: detalles operativos de despliegue, politicas finales de secretos, filtros avanzados de auditoria y decisiones funcionales listadas en preguntas abiertas.
 
 ## Alcance funcional planificado

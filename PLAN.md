@@ -85,7 +85,7 @@ Completar requisitos, tecnologias, decisiones tecnicas, arquitectura objetivo y 
 
 ## Fase 1 — Bootstrap tecnico del proyecto
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -102,13 +102,13 @@ Crear estructura base de codigo, configuracion minima, `go.mod`, servidor minimo
 
 ### Tareas
 
-- [ ] Crear `go.mod` con dependencias estrictamente necesarias para bootstrap.
-- [ ] Crear punto de entrada del servidor.
-- [ ] Crear configuracion minima de entorno.
-- [ ] Crear Makefile con comandos base.
-- [ ] Crear Docker Compose con PostgreSQL y aplicacion si corresponde.
-- [ ] Agregar validacion minima de arranque sin logica de negocio.
-- [ ] Actualizar documentacion de ejecucion local.
+- [x] Crear `go.mod` con dependencias estrictamente necesarias para bootstrap.
+- [x] Crear punto de entrada del servidor.
+- [x] Crear configuracion minima de entorno.
+- [x] Crear Makefile con comandos base.
+- [x] Crear Docker Compose con PostgreSQL y aplicacion si corresponde.
+- [x] Agregar validacion minima de arranque sin logica de negocio.
+- [x] Actualizar documentacion de ejecucion local.
 
 ### Criterios de aceptacion
 
