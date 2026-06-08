@@ -19,10 +19,14 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Modulo Go inicializado (`go.mod`, `go.sum`).
 - Servidor HTTP minimo con `chi` (solo endpoint `/health`).
 - Configuracion de entorno (`internal/config/config.go`, `.env.example`).
-- `Makefile` con comandos `build`, `run`, `test`, `clean`, `docker-build`, `docker-up`, `docker-down`, `docker-logs`.
-- `Dockerfile` multi-stage (build + runtime alpine).
-- `docker-compose.yml` con PostgreSQL 17 y aplicacion.
-- `.gitignore`.
+- `Makefile`, `Dockerfile`, `docker-compose.yml`, `.gitignore`.
+- **Fase 2 — Dominio y reglas centrales**.
+- Entidades de dominio: `User`, `Session`, `Task`, `Comment`.
+- Tipos de dominio: `Role` (`ADMIN`, `EXECUTOR`, `AUDITOR`), `TaskStatus` (`ASSIGNED`, `STARTED`, `WAITING`, `FINISHED_SUCCESS`, `FINISHED_ERROR`).
+- Validacion de transiciones de estado.
+- Reglas de vencimiento y propiedad de tareas.
+- Errores de dominio.
+- Tests unitarios de reglas criticas (36 tests, `testing` + `testify`).
 
 ## Planificado
 
@@ -30,15 +34,14 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Autenticacion JWT con `session_id`.
 - Sesiones revocables persistidas en base de datos.
 - Hash de contrasenas con bcrypt.
-- Tests con `testing`, `testify` y `httptest` cuando corresponda.
-- Dominio, aplicacion, handlers y repositorios (Fases 2-9).
+- Casos de uso, handlers, repositorios (Fases 3-9).
 
 ## No implementado todavia
 
-- Modelos de dominio o GORM.
+- Modelos GORM.
+- Puertos de aplicacion y contratos.
 - Casos de uso, handlers, repositorios y servicios de negocio.
 - Endpoints de negocio.
-- Tests ejecutables de negocio.
 
 ## Endpoints planificados
 

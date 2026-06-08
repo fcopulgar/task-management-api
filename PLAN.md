@@ -128,7 +128,7 @@ Crear estructura base de codigo, configuracion minima, `go.mod`, servidor minimo
 
 ## Fase 2 — Dominio y reglas centrales
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -144,12 +144,12 @@ Implementar entidades de dominio, roles, estados, transiciones, errores y tests 
 
 ### Tareas
 
-- [ ] Implementar entidades de dominio de usuario, sesion, tarea y comentario.
-- [ ] Implementar tipos para roles y estados.
-- [ ] Implementar validacion de transiciones de estado.
-- [ ] Implementar reglas de vencimiento y propiedad de tareas.
-- [ ] Implementar errores de dominio.
-- [ ] Crear tests unitarios de reglas criticas.
+- [x] Implementar entidades de dominio de usuario, sesion, tarea y comentario.
+- [x] Implementar tipos para roles y estados.
+- [x] Implementar validacion de transiciones de estado.
+- [x] Implementar reglas de vencimiento y propiedad de tareas.
+- [x] Implementar errores de dominio.
+- [x] Crear tests unitarios de reglas criticas.
 
 ### Criterios de aceptacion
 
