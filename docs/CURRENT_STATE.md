@@ -36,20 +36,29 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Errores de aplicacion: `ErrUserNotFound`, `ErrTaskNotFound`, `ErrSessionNotFound`, `ErrInvalidCredentials`, `ErrUnauthorized`, `ErrEmailAlreadyExists`, `ErrCannotCreateAdmin`, `ErrTaskNotModifiable`, `ErrTaskOverdue`.
 - Mocks de repositorios y servicios de seguridad para tests.
 - Tests de contratos (interfaces + DTOs, 10 tests adicionales).
+- **Fase 4 — Persistencia GORM y AutoMigrate**.
+- Modelos GORM separados del dominio: `UserModel`, `SessionModel`, `TaskModel`, `CommentModel` (UUIDs via `gen_random_uuid()`).
+- Mappers dominio↔modelos GORM: `UserToModel/FromModel`, `SessionToModel/FromModel`, `TaskToModel/FromModel`, `CommentToModel/FromModel`.
+- Repositorios outbound: `GormUserRepository`, `GormSessionRepository`, `GormTaskRepository`, `GormCommentRepository`.
+- Conexion PostgreSQL con `gorm.io/driver/postgres`.
+- `AutoMigrate` ejecutado al iniciar el servidor.
+- Integracion en `cmd/server/main.go`.
+- Tests de persistencia (13 tests: 9 mappers + 4 repositorios con PostgreSQL real).
+- `go.mod` actualizado a Go 1.25, `Dockerfile` a `golang:1.25-alpine`.
 
 ## Planificado
 
-- Persistencia en PostgreSQL con GORM y `AutoMigrate`.
 - Autenticacion JWT con `session_id`.
 - Sesiones revocables persistidas en base de datos.
 - Hash de contrasenas con bcrypt.
-- Casos de uso, handlers, repositorios (Fases 4-9).
+- Casos de uso, handlers (Fases 5-9).
 
 ## No implementado todavia
 
-- Modelos GORM.
-- Puertos de aplicacion y contratos.
-- Casos de uso, handlers, repositorios y servicios de negocio.
+- Casos de uso de autenticacion, usuarios y tareas.
+- Handlers HTTP de negocio.
+- Servicios de seguridad (bcrypt, JWT).
+- Middleware de autenticacion y autorizacion.
 - Endpoints de negocio.
 
 ## Endpoints planificados

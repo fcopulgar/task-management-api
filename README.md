@@ -8,7 +8,7 @@ El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo
 
 ## Estado actual
 
-- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales, plan de implementacion por fases, bootstrap tecnico (Go, `chi`, servidor minimo, Docker Compose, Makefile), dominio y reglas centrales (entidades, roles, estados, transiciones, errores, tests unitarios), puertos de aplicacion y contratos internos (interfaces de repositorios, security, DTOs, mocks, errores).
+- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales, plan de implementacion por fases, bootstrap tecnico (Go, `chi`, servidor minimo, Docker Compose, Makefile), dominio y reglas centrales (entidades, roles, estados, transiciones, errores, tests unitarios), puertos de aplicacion y contratos internos (interfaces de repositorios, security, DTOs, mocks, errores), persistencia GORM (modelos, mappers, repositorios, PostgreSQL, AutoMigrate, tests).
 - `PLANIFICADO`: implementacion de dominio, aplicacion, persistencia GORM, autenticacion JWT con `session_id`, sesiones revocables, bcrypt, endpoints de negocio y tests.
 - `PENDIENTE DE IMPLEMENTACION`: codigo de dominio, casos de uso, endpoints, modelos GORM, repositorios, servicios de autenticacion, integraciones y tests de negocio.
 - `PENDIENTE DE DEFINICION`: detalles operativos de despliegue, politicas finales de secretos, filtros avanzados de auditoria y decisiones funcionales listadas en preguntas abiertas.

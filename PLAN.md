@@ -202,7 +202,7 @@ Definir interfaces de repositorios, servicios de seguridad, token service y estr
 
 ## Fase 4 — Persistencia GORM y AutoMigrate
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -218,12 +218,12 @@ Crear modelos GORM, mappers, repositorios, conexion PostgreSQL y AutoMigrate.
 
 ### Tareas
 
-- [ ] Crear modelos GORM de usuarios, sesiones, tareas y comentarios.
-- [ ] Crear mappers entre dominio y modelos GORM.
-- [ ] Implementar repositorios con GORM.
-- [ ] Configurar conexion PostgreSQL.
-- [ ] Ejecutar AutoMigrate al iniciar segun configuracion.
-- [ ] Agregar tests de persistencia si la infraestructura local lo permite.
+- [x] Crear modelos GORM de usuarios, sesiones, tareas y comentarios.
+- [x] Crear mappers entre dominio y modelos GORM.
+- [x] Implementar repositorios con GORM.
+- [x] Configurar conexion PostgreSQL.
+- [x] Ejecutar AutoMigrate al iniciar segun configuracion.
+- [x] Agregar tests de persistencia si la infraestructura local lo permite.
 
 ### Criterios de aceptacion
 
