@@ -166,7 +166,7 @@ Implementar entidades de dominio, roles, estados, transiciones, errores y tests 
 
 ## Fase 3 — Puertos de aplicacion y contratos internos
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -182,11 +182,11 @@ Definir interfaces de repositorios, servicios de seguridad, token service y estr
 
 ### Tareas
 
-- [ ] Definir interfaces de repositorios requeridas.
-- [ ] Definir servicios de contrasena y token.
-- [ ] Definir contratos de sesion revocable.
-- [ ] Definir inputs y outputs internos por caso de uso.
-- [ ] Crear tests de contratos cuando corresponda.
+- [x] Definir interfaces de repositorios requeridas.
+- [x] Definir servicios de contrasena y token.
+- [x] Definir contratos de sesion revocable.
+- [x] Definir inputs y outputs internos por caso de uso.
+- [x] Crear tests de contratos cuando corresponda.
 
 ### Criterios de aceptacion
 

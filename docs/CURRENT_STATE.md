@@ -27,6 +27,15 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Reglas de vencimiento y propiedad de tareas.
 - Errores de dominio.
 - Tests unitarios de reglas criticas (36 tests, `testing` + `testify`).
+- **Fase 3 — Puertos de aplicacion y contratos internos**.
+- Interfaces de repositorios: `UserRepository`, `SessionRepository`, `TaskRepository`, `CommentRepository`.
+- Interfaces de seguridad: `PasswordHasher`, `TokenService`.
+- `TokenClaims` con `UserID`, `Role` y `SessionID`.
+- DTOs de entrada/salida: `LoginInput/Output`, `ChangePasswordInput`, `CreateUserInput`, `UpdateUserInput`, `UserOutput`, `CreateTaskInput`, `UpdateTaskInput`, `TransitionTaskInput`, `TaskOutput`, `CreateCommentInput`, `CommentOutput`.
+- Funciones de mapeo dominio->DTO: `UserToOutput`, `TaskToOutput`, `CommentToOutput`.
+- Errores de aplicacion: `ErrUserNotFound`, `ErrTaskNotFound`, `ErrSessionNotFound`, `ErrInvalidCredentials`, `ErrUnauthorized`, `ErrEmailAlreadyExists`, `ErrCannotCreateAdmin`, `ErrTaskNotModifiable`, `ErrTaskOverdue`.
+- Mocks de repositorios y servicios de seguridad para tests.
+- Tests de contratos (interfaces + DTOs, 10 tests adicionales).
 
 ## Planificado
 
@@ -34,7 +43,7 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Autenticacion JWT con `session_id`.
 - Sesiones revocables persistidas en base de datos.
 - Hash de contrasenas con bcrypt.
-- Casos de uso, handlers, repositorios (Fases 3-9).
+- Casos de uso, handlers, repositorios (Fases 4-9).
 
 ## No implementado todavia
 
