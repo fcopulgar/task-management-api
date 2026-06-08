@@ -1,5 +1,16 @@
 # Requisitos
 
-Esta carpeta contiene el alcance del producto, requisitos funcionales, requisitos no funcionales y preguntas abiertas.
+Esta carpeta contiene el alcance del producto, requisitos funcionales, requisitos no funcionales y preguntas abiertas de `task-management-api`.
 
-El contenido actual es una plantilla inicial. Las definiciones reales están `PENDIENTE DE DEFINICIÓN`.
+## Estado
+
+`PLANIFICADO`
+
+## Documentos
+
+- `product-scope.md`: alcance de producto y actores.
+- `functional-requirements.md`: requisitos funcionales planificados.
+- `non-functional-requirements.md`: requisitos no funcionales planificados.
+- `open-questions.md`: dudas reales pendientes de definicion.
+
+Los requisitos describen comportamiento esperado. La implementacion esta `PENDIENTE DE IMPLEMENTACION`.

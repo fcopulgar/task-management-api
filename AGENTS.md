@@ -42,3 +42,12 @@ Siempre reportar:
 - validación realizada
 - documentación actualizada
 - deuda o pendientes detectados
+
+## Estado vigente del proyecto
+
+- Producto especificado: `task-management-api`.
+- Stack definido: Go, `chi`, GORM, PostgreSQL, GORM `AutoMigrate`, JWT con `session_id`, sesiones revocables y bcrypt.
+- Arquitectura objetivo: hexagonal minimalista.
+- Implementacion funcional: `PENDIENTE DE IMPLEMENTACION`.
+- No crear migraciones SQL versionadas ni carpeta `migrations/` en la etapa actual.
+- No crear frontend, mobile, workers ni CLI salvo que una fase futura lo defina explicitamente.

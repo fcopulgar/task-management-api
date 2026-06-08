@@ -1,6 +1,14 @@
 # Flujo operativo para agentes
 
-Usar este formato para iniciar una fase futura:
+## Estado
+
+`IMPLEMENTADO`
+
+## Inicio obligatorio
+
+Antes de trabajar, leer las fuentes de verdad en el orden definido por `AGENTS.md`.
+
+## Formato para iniciar una fase futura
 
 ```text
 Quiero trabajar solo en:
@@ -13,10 +21,20 @@ Reglas:
 - no adelantes fases futuras
 - no hagas refactors fuera de scope
 - no inventes requisitos
-- no inventes tecnologías
-- si cambia una decisión arquitectónica, crea o actualiza ADRs
+- no inventes tecnologias
+- si cambia una decision arquitectonica, crea un nuevo ADR
 - actualiza PLAN.md
 - actualiza CURRENT_STATE.md
 - actualiza TECH_DEBT.md si corresponde
-- reporta validación realizada
+- reporta validacion realizada
 ```
+
+## Cierre obligatorio
+
+Todo cierre debe reportar:
+
+- archivos modificados
+- tareas del plan completadas
+- validacion realizada
+- documentacion actualizada
+- deuda o pendientes detectados

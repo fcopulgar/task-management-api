@@ -2,22 +2,27 @@
 
 ## Estado
 
-`PENDIENTE DE DEFINICIÓN`
+`PENDIENTE DE IMPLEMENTACION`
 
-No existen smoke tests ejecutables porque todavía no hay tecnología, aplicación ni comandos definidos.
+No existen smoke tests ejecutables porque todavia no hay aplicacion.
 
-## Validación documental inicial
+## Validacion documental disponible
 
 - Confirmar que existe `README.md`.
 - Confirmar que existe `PLAN.md`.
 - Confirmar que existe `AGENTS.md`.
 - Confirmar que existe `docs/CURRENT_STATE.md`.
-- Confirmar que existe `docs/decisions/TEMPLATE.md`.
-- Confirmar que no existe código de aplicación.
+- Confirmar que existen ADRs iniciales en `docs/decisions/`.
+- Confirmar que existe `docs/backend/`.
+- Confirmar que no existe codigo de aplicacion.
+- Confirmar que no existe carpeta `migrations/`.
 
-## Pendiente de implementación
+## Smoke tests futuros
 
-- Smoke tests de ejecución local.
-- Smoke tests de integraciones.
-- Smoke tests funcionales.
-- Smoke tests de despliegue.
+- Login exitoso.
+- Logout revoca sesion.
+- Token con sesion revocada es rechazado.
+- Usuario con contrasena temporal solo puede cambiar contrasena y cerrar sesion.
+- `ADMIN` no puede crear otro `ADMIN`.
+- `EXECUTOR` no puede ver tareas ajenas.
+- `AUDITOR` no puede escribir tareas.

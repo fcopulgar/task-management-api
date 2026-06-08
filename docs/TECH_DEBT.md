@@ -1,4 +1,4 @@
-# Deuda técnica
+# Deuda tecnica
 
 ## Crítica
 
@@ -18,7 +18,8 @@ Sin deuda registrada.
 
 ## Deuda futura / no bloqueante
 
-Sin deuda registrada.
+- Evaluar migraciones SQL versionadas en una etapa futura si `AutoMigrate` deja de ser suficiente para evolucion controlada del esquema. No aplica a la etapa actual.
+- Definir estrategia de despliegue, secretos, respaldo y recuperacion antes de produccion.
 
 ## Resuelta
 

@@ -1,16 +1,27 @@
-# Decisiones arquitectónicas
+# Decisiones arquitectonicas
 
-## Qué es un ADR
+## Estado
 
-Un ADR registra una decisión arquitectónica relevante, su contexto, consecuencias y alternativas consideradas.
+`IMPLEMENTADO`
 
-## Cuándo crear un ADR
+## Que es un ADR
 
-Crear un ADR cuando se defina o cambie una tecnología, patrón arquitectónico, estrategia de persistencia, estrategia de seguridad, integración relevante o decisión con impacto mantenible.
+Un ADR registra una decision arquitectonica relevante, su contexto, consecuencias y alternativas consideradas.
 
-## Numeración
+## ADRs vigentes
 
-Usar numeración secuencial de cuatro dígitos:
+- `0001-use-go.md`: usar Go como lenguaje principal.
+- `0002-use-hexagonal-architecture.md`: usar arquitectura hexagonal minimalista.
+- `0003-use-chi-router.md`: usar `chi` como router HTTP.
+- `0004-use-postgresql.md`: usar PostgreSQL.
+- `0005-use-gorm.md`: usar GORM.
+- `0006-use-gorm-automigrate.md`: usar GORM `AutoMigrate`.
+- `0007-use-jwt-with-revocable-sessions.md`: usar JWT con sesiones revocables.
+- `0008-use-bcrypt-for-password-hashing.md`: usar bcrypt para hash de contrasenas.
+
+## Numeracion
+
+Usar numeracion secuencial de cuatro digitos:
 
 ```text
 0001-titulo-de-la-decision.md
@@ -19,12 +30,4 @@ Usar numeración secuencial de cuatro dígitos:
 
 ## Cambio de decisiones
 
-Los ADRs son historial técnico. No se borran cuando una decisión cambia. Si una decisión deja de estar vigente, se crea un nuevo ADR y el anterior se marca como `Reemplazado` o `Deprecado`.
-
-## Motivo para conservar ADRs antiguos
-
-Los ADRs permiten entender por qué una decisión fue tomada, qué alternativas se consideraron y cuándo dejó de estar vigente.
-
-## Estado actual
-
-No existen ADRs concretos porque todavía no hay decisiones técnicas definidas.
+Los ADRs son historial tecnico. No se borran cuando una decision cambia. Si una decision deja de estar vigente, se crea un nuevo ADR y el anterior se marca como `Reemplazado` o `Deprecado`.
