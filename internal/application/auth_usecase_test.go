@@ -15,10 +15,17 @@ import (
 type mockUserRepo struct {
 	findByEmailFn func(ctx context.Context, email string) (*domain.User, error)
 	findByIDFn    func(ctx context.Context, id string) (*domain.User, error)
+	listFn        func(ctx context.Context) ([]domain.User, error)
+	createFn      func(ctx context.Context, user *domain.User) error
 	updateFn      func(ctx context.Context, user *domain.User) error
 }
 
-func (m *mockUserRepo) Create(ctx context.Context, user *domain.User) error { return nil }
+func (m *mockUserRepo) Create(ctx context.Context, user *domain.User) error {
+	if m.createFn != nil {
+		return m.createFn(ctx, user)
+	}
+	return nil
+}
 func (m *mockUserRepo) FindByID(ctx context.Context, id string) (*domain.User, error) {
 	if m.findByIDFn != nil {
 		return m.findByIDFn(ctx, id)
@@ -31,7 +38,12 @@ func (m *mockUserRepo) FindByEmail(ctx context.Context, email string) (*domain.U
 	}
 	return nil, nil
 }
-func (m *mockUserRepo) List(ctx context.Context) ([]domain.User, error)   { return nil, nil }
+func (m *mockUserRepo) List(ctx context.Context) ([]domain.User, error) {
+	if m.listFn != nil {
+		return m.listFn(ctx)
+	}
+	return nil, nil
+}
 func (m *mockUserRepo) Update(ctx context.Context, user *domain.User) error {
 	if m.updateFn != nil {
 		return m.updateFn(ctx, user)

@@ -282,7 +282,7 @@ Implementar login, emision de JWT, sesiones revocables, logout y cambio obligato
 
 ## Fase 6 — Gestion de usuarios administrador
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -299,13 +299,13 @@ Implementar CRUD de usuarios para `ADMIN`, respetando restricciones de rol, cont
 
 ### Tareas
 
-- [ ] Implementar casos de uso de administracion de usuarios.
-- [ ] Implementar handlers HTTP de usuarios.
-- [ ] Aplicar autorizacion `ADMIN`.
-- [ ] Rechazar creacion de usuarios `ADMIN`.
-- [ ] Crear usuarios con contrasena temporal o `must_change_password = true`.
-- [ ] Implementar desactivacion logica.
-- [ ] Agregar tests de permisos y respuestas.
+- [x] Implementar casos de uso de administracion de usuarios.
+- [x] Implementar handlers HTTP de usuarios.
+- [x] Aplicar autorizacion `ADMIN`.
+- [x] Rechazar creacion de usuarios `ADMIN`.
+- [x] Crear usuarios con contrasena temporal o `must_change_password = true`.
+- [x] Implementar desactivacion logica.
+- [x] Agregar tests de permisos y respuestas.
 
 ### Criterios de aceptacion
 

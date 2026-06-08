@@ -77,6 +77,7 @@ func main() {
 	})
 
 	httphandler.SetupAuthRoutes(r, deps)
+	httphandler.SetupUserRoutes(r, deps)
 
 	srv := &http.Server{
 		Addr:         fmt.Sprintf(":%s", cfg.ServerPort),

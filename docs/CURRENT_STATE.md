@@ -54,13 +54,22 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Contexto de autenticacion via `SetAuthInfo`/`GetAuthInfo` con `UserID`, `Role`, `SessionID`.
 - `Dependencies` container (`application.Dependencies`) para wire-up de puertos.
 - Tests: 8 security + 9 use case + 6 handler + 10 middleware = 33 tests adicionales.
+- **Fase 6 — Gestion de usuarios administrador**.
+- Caso de uso `UserUseCase` con `CreateUser`, `ListUsers`, `GetUser`, `UpdateUser`, `DeactivateUser`.
+- Handlers HTTP: `POST /users`, `GET /users`, `GET /users/{id}`, `PUT /users/{id}`, `DELETE /users/{id}`.
+- Middleware `RequireRole`: autorizacion por perfil (solo `ADMIN` accede a `/users`).
+- Restriccion: `ADMIN` no puede crear otros `ADMIN` (RF-006).
+- Usuarios nuevos creados con `must_change_password = true`.
+- Desactivacion logica (`active = false`) via `DELETE /users/{id}`.
+- `password_hash` nunca expuesto en respuestas API.
+- Validacion de email unico al crear/actualizar.
+- Tests: 10 use case + 8 handler = 18 tests adicionales.
 
 ## Planificado
 
-- Casos de uso de usuarios y tareas.
-- Handlers HTTP de usuarios y tareas.
-- Middleware de autorizacion por rol.
-- Endpoints de negocio (Fases 6-9).
+- Casos de uso de tareas.
+- Handlers HTTP de tareas.
+- Endpoints de negocio (Fases 7-9).
 
 ## No implementado todavia
 

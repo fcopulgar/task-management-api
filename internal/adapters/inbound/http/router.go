@@ -4,6 +4,7 @@ import (
 	"github.com/go-chi/chi/v5"
 
 	"github.com/anomalyco/task-management-api/internal/application"
+	"github.com/anomalyco/task-management-api/internal/domain"
 )
 
 func SetupAuthRoutes(r chi.Router, deps application.Dependencies) {
@@ -19,6 +20,25 @@ func SetupAuthRoutes(r chi.Router, deps application.Dependencies) {
 
 		r.Post("/auth/logout", authHandler.Logout)
 		r.Post("/auth/password", authHandler.ChangePassword)
+	})
+}
+
+func SetupUserRoutes(r chi.Router, deps application.Dependencies) {
+	userUC := application.NewUserUseCase(deps)
+	userHandler := NewUserHandler(userUC)
+
+	authMW := NewAuthMiddleware(deps.UserRepo, deps.SessionRepo, deps.TokenSvc)
+
+	r.Route("/users", func(r chi.Router) {
+		r.Use(authMW.Authenticate)
+		r.Use(RequireRole(domain.RoleAdmin))
+		r.Use(authMW.RequirePasswordNotTemporary)
+
+		r.Post("/", userHandler.Create)
+		r.Get("/", userHandler.List)
+		r.Get("/{id}", userHandler.Get)
+		r.Put("/{id}", userHandler.Update)
+		r.Delete("/{id}", userHandler.Delete)
 	})
 }
 

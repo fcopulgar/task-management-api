@@ -6,7 +6,7 @@ type LoginInput struct {
 }
 
 type LoginOutput struct {
-	Token string
+	Token string `json:"token"`
 }
 
 type ChangePasswordInput struct {
