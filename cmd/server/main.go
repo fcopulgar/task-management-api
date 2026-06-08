@@ -13,8 +13,11 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 
-	"github.com/anomalyco/task-management-api/internal/config"
 	"github.com/anomalyco/task-management-api/internal/adapters/outbound/persistence"
+	"github.com/anomalyco/task-management-api/internal/adapters/outbound/security"
+	"github.com/anomalyco/task-management-api/internal/application"
+	httphandler "github.com/anomalyco/task-management-api/internal/adapters/inbound/http"
+	"github.com/anomalyco/task-management-api/internal/config"
 )
 
 func main() {
@@ -49,6 +52,18 @@ func main() {
 		log.Fatalf("error al ejecutar AutoMigrate: %v", err)
 	}
 
+	userRepo := persistence.NewGormUserRepository(db)
+	sessionRepo := persistence.NewGormSessionRepository(db)
+	hasher := security.NewBcryptHasher()
+	tokenSvc := security.NewJWTTokenService(cfg.JWTSecret)
+
+	deps := application.Dependencies{
+		UserRepo:    userRepo,
+		SessionRepo: sessionRepo,
+		Hasher:      hasher,
+		TokenSvc:    tokenSvc,
+	}
+
 	r := chi.NewRouter()
 
 	r.Use(middleware.Logger)
@@ -60,6 +75,8 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte(`{"status":"ok"}`))
 	})
+
+	httphandler.SetupAuthRoutes(r, deps)
 
 	srv := &http.Server{
 		Addr:         fmt.Sprintf(":%s", cfg.ServerPort),

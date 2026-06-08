@@ -241,7 +241,7 @@ Crear modelos GORM, mappers, repositorios, conexion PostgreSQL y AutoMigrate.
 
 ## Fase 5 — Autenticacion, sesiones y cambio de contrasena
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -258,13 +258,13 @@ Implementar login, emision de JWT, sesiones revocables, logout y cambio obligato
 
 ### Tareas
 
-- [ ] Implementar caso de uso de login.
-- [ ] Implementar creacion o asociacion de sesion.
-- [ ] Implementar emision y validacion de JWT.
-- [ ] Implementar logout con revocacion persistida.
-- [ ] Implementar cambio de contrasena con bcrypt.
-- [ ] Implementar middleware de autenticacion y restriccion por contrasena temporal.
-- [ ] Agregar tests unitarios y HTTP aplicables.
+- [x] Implementar caso de uso de login.
+- [x] Implementar creacion o asociacion de sesion.
+- [x] Implementar emision y validacion de JWT.
+- [x] Implementar logout con revocacion persistida.
+- [x] Implementar cambio de contrasena con bcrypt.
+- [x] Implementar middleware de autenticacion y restriccion por contrasena temporal.
+- [x] Agregar tests unitarios y HTTP aplicables.
 
 ### Criterios de aceptacion
 

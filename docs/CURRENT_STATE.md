@@ -45,13 +45,22 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Integracion en `cmd/server/main.go`.
 - Tests de persistencia (13 tests: 9 mappers + 4 repositorios con PostgreSQL real).
 - `go.mod` actualizado a Go 1.25, `Dockerfile` a `golang:1.25-alpine`.
+- **Fase 5 — Autenticacion, sesiones y cambio de contrasena**.
+- Adaptadores de seguridad: `BcryptHasher` (`golang.org/x/crypto/bcrypt`), `JWTTokenService` (`github.com/golang-jwt/jwt/v5`).
+- Caso de uso `AuthUseCase` con `Login`, `Logout`, `ChangePassword`.
+- Endpoints HTTP: `POST /auth/login`, `POST /auth/logout`, `POST /auth/password`.
+- Middleware `Authenticate`: extrae JWT, valida firma, verifica sesion no revocada, verifica usuario activo.
+- Middleware `RequirePasswordNotTemporary`: bloquea acceso si `must_change_password = true` (excepto `/auth/password` y `/auth/logout`).
+- Contexto de autenticacion via `SetAuthInfo`/`GetAuthInfo` con `UserID`, `Role`, `SessionID`.
+- `Dependencies` container (`application.Dependencies`) para wire-up de puertos.
+- Tests: 8 security + 9 use case + 6 handler + 10 middleware = 33 tests adicionales.
 
 ## Planificado
 
-- Autenticacion JWT con `session_id`.
-- Sesiones revocables persistidas en base de datos.
-- Hash de contrasenas con bcrypt.
-- Casos de uso, handlers (Fases 5-9).
+- Casos de uso de usuarios y tareas.
+- Handlers HTTP de usuarios y tareas.
+- Middleware de autorizacion por rol.
+- Endpoints de negocio (Fases 6-9).
 
 ## No implementado todavia
 
