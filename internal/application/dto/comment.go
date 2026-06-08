@@ -7,9 +7,9 @@ import (
 )
 
 type CreateCommentInput struct {
-	TaskID  string
-	UserID  string
-	Comment string
+	TaskID  string `json:"-"`
+	UserID  string `json:"-"`
+	Comment string `json:"comment"`
 }
 
 type CommentOutput struct {

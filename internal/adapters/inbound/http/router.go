@@ -71,3 +71,21 @@ func SetupTaskRoutes(r chi.Router, deps application.Dependencies) {
 		r.With(RequireRole(domain.RoleAdmin)).Delete("/{id}", taskHandler.Delete)
 	})
 }
+
+func SetupExecutorRoutes(r chi.Router, deps application.Dependencies) {
+	execUC := application.NewExecutorUseCase(deps)
+	execHandler := NewExecutorHandler(execUC)
+
+	authMW := NewAuthMiddleware(deps.UserRepo, deps.SessionRepo, deps.TokenSvc)
+
+	r.Route("/me/tasks", func(r chi.Router) {
+		r.Use(authMW.Authenticate)
+		r.Use(RequireRole(domain.RoleExecutor))
+		r.Use(authMW.RequirePasswordNotTemporary)
+
+		r.Get("/", execHandler.ListMyTasks)
+		r.Get("/{id}", execHandler.GetMyTask)
+		r.Patch("/{id}/status", execHandler.TransitionStatus)
+		r.Post("/{id}/comments", execHandler.CommentOnTask)
+	})
+}

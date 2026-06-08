@@ -73,10 +73,19 @@ El proyecto `task-management-api` cuenta con harness documental, especificacion 
 - Handlers HTTP con `handleTaskError` para errores de tarea.
 - `Dependencies` ampliado con `TaskRepo`.
 - Tests: 8 use case + 6 handler = 14 tests adicionales.
+- **Fase 8 — Flujos de ejecutor**.
+- Caso de uso `ExecutorUseCase` con `ListMyTasks`, `GetMyTask`, `TransitionTask`, `CommentOnTask`.
+- Validacion de propiedad de tarea (`IsAssignedTo`).
+- Bloqueo de cambio de estado en tareas vencidas (`ErrTaskOverdue`).
+- Comentarios solo en tareas vencidas propias (`CanBeCommentedBy`).
+- Rutas `/me/tasks` GET (listar), GET `/{id}` (detalle), PATCH `/{id}/status` (transicion), POST `/{id}/comments` (comentar).
+- Middleware `RequireRole(EXECUTOR)` en todas las rutas de ejecutor.
+- `handleExecutorError` para errores de dominio (transicion invalida, tarea terminal, sin comentario, etc.).
+- `Dependencies` ampliado con `CommentRepo`.
+- Tests: 10 use case + 6 handler = 16 tests adicionales.
 
 ## Planificado
 
-- Flujos de ejecutor (Fase 8).
 - Tests HTTP, hardening, documentacion final (Fase 9).
 
 ## No implementado todavia

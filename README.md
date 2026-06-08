@@ -8,7 +8,7 @@ El sistema contempla tres perfiles: `ADMIN`, `EXECUTOR` y `AUDITOR`. El objetivo
 
 ## Estado actual
 
-- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales, plan de implementacion por fases, bootstrap tecnico (Go, `chi`, servidor minimo, Docker Compose, Makefile), dominio y reglas centrales (entidades, roles, estados, transiciones, errores, tests unitarios), puertos de aplicacion y contratos internos (interfaces de repositorios, security, DTOs, mocks, errores), persistencia GORM (modelos, mappers, repositorios, PostgreSQL, AutoMigrate, tests), autenticacion (login, JWT con session_id, logout, bcrypt, cambio de contrasena, middleware), gestion de usuarios administrador (CRUD, autorizacion por rol, restriccion de creacion ADMIN, desactivacion logica), gestion de tareas administrador y auditor (CRUD, asignacion solo a EXECUTOR, restriccion por estado ASSIGNED, lectura compartida).
+- `IMPLEMENTADO`: harness documental base, reglas para agentes, fuentes de verdad, estructura de documentacion, ADRs iniciales, plan de implementacion por fases, bootstrap tecnico (Go, `chi`, servidor minimo, Docker Compose, Makefile), dominio y reglas centrales (entidades, roles, estados, transiciones, errores, tests unitarios), puertos de aplicacion y contratos internos (interfaces de repositorios, security, DTOs, mocks, errores), persistencia GORM (modelos, mappers, repositorios, PostgreSQL, AutoMigrate, tests), autenticacion (login, JWT con session_id, logout, bcrypt, cambio de contrasena, middleware), gestion de usuarios administrador (CRUD, autorizacion por rol, restriccion de creacion ADMIN, desactivacion logica), gestion de tareas administrador y auditor (CRUD, asignacion solo a EXECUTOR, restriccion por estado ASSIGNED, lectura compartida), flujos de ejecutor (tareas propias, transiciones de estado, bloqueo por vencimiento, comentarios en vencidas).
 - `PLANIFICADO`: implementacion de dominio, aplicacion, persistencia GORM, autenticacion JWT con `session_id`, sesiones revocables, bcrypt, endpoints de negocio y tests.
 - `PENDIENTE DE IMPLEMENTACION`: codigo de dominio, casos de uso, endpoints, modelos GORM, repositorios, servicios de autenticacion, integraciones y tests de negocio.
 - `PENDIENTE DE DEFINICION`: detalles operativos de despliegue, politicas finales de secretos, filtros avanzados de auditoria y decisiones funcionales listadas en preguntas abiertas.
@@ -82,6 +82,3 @@ Las decisiones arquitectonicas iniciales estan en `docs/decisions/`. Los ADRs so
 - Herramientas como `golang-migrate` o `goose`.
 - Endpoints, modelos, servicios, handlers, repositorios o casos de uso implementados en esta fase documental.
 
-## Proximos pasos
-
-Ejecutar `Fase 1 — Bootstrap tecnico del proyecto` desde `PLAN.md`, creando solo la base tecnica minima definida para esa fase.

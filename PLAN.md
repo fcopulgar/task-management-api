@@ -359,7 +359,7 @@ Implementar creacion, listado, detalle, actualizacion y eliminacion de tareas se
 
 ## Fase 8 — Flujos de ejecutor
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -375,12 +375,12 @@ Implementar listado de tareas propias, detalle, cambio de estado y comentarios s
 
 ### Tareas
 
-- [ ] Implementar casos de uso de tareas propias.
-- [ ] Implementar cambio de estado por ejecutor.
-- [ ] Implementar comentario de tarea vencida propia.
-- [ ] Implementar handlers `/me/tasks`.
-- [ ] Rechazar acceso a tareas de otros ejecutores.
-- [ ] Agregar tests de propiedad, vencimiento y transiciones.
+- [x] Implementar casos de uso de tareas propias.
+- [x] Implementar cambio de estado por ejecutor.
+- [x] Implementar comentario de tarea vencida propia.
+- [x] Implementar handlers `/me/tasks`.
+- [x] Rechazar acceso a tareas de otros ejecutores.
+- [x] Agregar tests de propiedad, vencimiento y transiciones.
 
 ### Criterios de aceptacion
 

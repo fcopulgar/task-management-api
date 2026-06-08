@@ -6,6 +6,7 @@ type Dependencies struct {
 	UserRepo    ports.UserRepository
 	SessionRepo ports.SessionRepository
 	TaskRepo    ports.TaskRepository
+	CommentRepo ports.CommentRepository
 	Hasher      ports.PasswordHasher
 	TokenSvc    ports.TokenService
 }
