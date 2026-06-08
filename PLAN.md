@@ -397,7 +397,7 @@ Implementar listado de tareas propias, detalle, cambio de estado y comentarios s
 
 ## Fase 9 — Tests HTTP, hardening y documentacion final
 
-**Estado:** `PENDIENTE ⬜`
+**Estado:** `COMPLETADO ✅`
 
 ### Objetivo
 
@@ -413,12 +413,12 @@ Completar tests de integracion HTTP minimos, smoke tests, documentacion de endpo
 
 ### Tareas
 
-- [ ] Completar tests HTTP de flujos criticos.
-- [ ] Definir y ejecutar smoke tests reales.
-- [ ] Revisar errores y respuestas de seguridad.
-- [ ] Actualizar documentacion de API segun implementacion final.
-- [ ] Actualizar checklist de produccion.
-- [ ] Registrar deuda tecnica real pendiente.
+- [x] Completar tests HTTP de flujos criticos.
+- [x] Definir y ejecutar smoke tests reales.
+- [x] Revisar errores y respuestas de seguridad.
+- [x] Actualizar documentacion de API segun implementacion final.
+- [x] Actualizar checklist de produccion.
+- [x] Registrar deuda tecnica real pendiente.
 
 ### Criterios de aceptacion
 

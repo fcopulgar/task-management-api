@@ -71,14 +71,4 @@ El desarrollo se organiza por fases en `PLAN.md`. Cada fase debe ejecutarse dent
 
 Las decisiones arquitectonicas iniciales estan en `docs/decisions/`. Los ADRs son historial tecnico versionado: no se borran; si una decision cambia, se crea un nuevo ADR y el anterior se marca como `Reemplazado` o `Deprecado`.
 
-## Fuera de alcance actual
-
-- Frontend.
-- Aplicacion mobile.
-- Workers.
-- CLI.
-- Migraciones SQL versionadas.
-- Carpeta `migrations/`.
-- Herramientas como `golang-migrate` o `goose`.
-- Endpoints, modelos, servicios, handlers, repositorios o casos de uso implementados en esta fase documental.
 
